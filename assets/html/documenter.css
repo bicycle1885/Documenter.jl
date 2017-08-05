@@ -14,14 +14,14 @@
 
 /* fonts */
 body, input {
-  font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+  font-family: sans-serif;
   font-size: 16px;
   color: #222;
   text-rendering: optimizeLegibility;
 }
 
 pre, code, kbd {
-  font-family: 'Roboto Mono', Monaco, courier, monospace;
+  font-family: Menlo, Consolas, "Ubuntu Mono", monospace;
   font-size: 0.90em;
 }
 
@@ -36,6 +36,7 @@ a {
 
 a:hover {
     color: #3091d1;
+    text-decoration: underline;
 }
 
 a:visited {
@@ -43,15 +44,15 @@ a:visited {
 }
 
 body {
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
-h1 { font-size: 1.75em; }
-h2 { font-size: 1.50em; }
-h3 { font-size: 1.25em; }
+h1 { font-size: 1.60em; }
+h2 { font-size: 1.40em; margin-top: 2.0em; margin-bottom: 0; border-bottom: 1px solid #ddd;  padding-bottom: 0.2em; }
+h3 { font-size: 1.20em; margin-top: 1.8em; margin-bottom: 0; border-bottom: 1px dashed #ddd; padding-bottom: 0.2em; }
 h4 { font-size: 1.15em; }
-h5 { font-size: 1.10em; }
-h6 { font-size: 1em; }
+h5 { font-size: 1.15em; }
+h6 { font-size: 1.15em; }
 
 h4, h5, h6 {
     margin: 1em 0;
@@ -61,9 +62,14 @@ img {
     max-width: 100%;
 }
 
+ul {
+    list-style-type: square;
+}
+
 table {
     border-collapse: collapse;
     margin: 1em 0;
+    line-height: 1;
 }
 
 th, td {
@@ -89,14 +95,11 @@ hr {
 code {
     padding: 0.1em;
     background-color: rgba(0,0,0,.04);
-    border-radius: 3px;
 }
 
 pre {
-    background-color: #f5f5f5;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    padding: 0.5em;
+    background-color: #f7f7f7;
+    padding: 0.8em;
     overflow: auto;
 }
 
@@ -109,13 +112,12 @@ kbd {
     font-size: 0.70em;
     display: inline-block;
     padding: 0.1em 0.5em 0.4em 0.5em;
-    line-height: 1.0em;
+    line-height: 1;
     color: #444d56;
     vertical-align: middle;
     background-color: #fafbfc;
     border: solid 1px #c6cbd1;
     border-bottom-color: #959da5;
-    border-radius: 3px;
     box-shadow: inset 0 -1px 0 #959da5;
 }
 
@@ -147,11 +149,15 @@ nav.toc {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 20em;
+    width: 18em;
     overflow-y: auto;
     padding: 1em 0;
-    background-color: #fcfcfc;
-    box-shadow: inset -14px 0px 5px -12px rgb(210,210,210);
+    background-color: #f6f6f6;
+    font-size: 14px;
+}
+
+nav.toc > a {
+    /*display: none;*/
 }
 
 nav.toc .logo {
@@ -176,8 +182,6 @@ nav.toc select {
     max-width: calc(100% - 5em);
     margin: 0 auto;
     font-size: .83em;
-    border: 1px solid #c9c9c9;
-    border-radius: 1em;
 
     /* TODO: doesn't seem to be centered on Safari */
     text-align: center;
@@ -208,8 +212,6 @@ nav.toc input {
     width: calc(100% - 5em);
     margin: 1.2em auto;
     padding: 0 1em;
-    border: 1px solid #c9c9c9;
-    border-radius: 1em;
     font-size: .83em;
 }
 
@@ -244,7 +246,6 @@ nav.toc ul.internal a:hover {
 
 nav.toc ul.internal {
     background-color: #e3e3e3;
-    box-shadow: inset -14px 0px 5px -12px rgb(210,210,210);
     list-style: none;
 }
 
@@ -276,17 +277,16 @@ nav.toc ul ul ul .toctext {
 }
 
 nav.toc li.current > .toctext {
-    border-top: 1px solid #c9c9c9;
-    border-bottom: 1px solid #c9c9c9;
     color: #404040;
     font-weight: bold;
     background-color: white;
+    text-decoration: underline;
 }
 
 article {
-    margin-left: 20em;
+    margin-left: 17em;
     min-width: 20em;
-    max-width: 48em;
+    max-width: 60em;
     padding: 2em;
 }
 
@@ -335,18 +335,27 @@ article hr {
 }
 
 article section.docstring {
-    border: 1px solid #ddd;
-    margin: 0.5em 0;
-    padding: 0.5em;
-    border-radius: 3px;
+    margin: 0.5em 0 0;
+}
+
+article section.docstring p {
+    margin: 0.3em 0;
+}
+
+article section.docstring pre {
+    margin: 0.3em 0;
+}
+
+article section.docstring > * {
+    margin-left: 1.5em;
 }
 
 article section.docstring .docstring-header {
-    margin-bottom: 1em;
+    margin-left: 0;
 }
 
 article section.docstring .docstring-binding {
-    color: #333;
+    color: #222;
     font-weight: bold;
 }
 
@@ -356,13 +365,15 @@ article section.docstring .docstring-category {
 
 article section.docstring a.source-link {
     display: block;
-    font-weight: bold;
+    font-size: 13px;
+    line-height: 1;
+    text-align: right;
 }
 
 .nav-anchor,
 .nav-anchor:hover,
 .nav-anchor:visited {
-    color: #333;
+    color: #222;
 }
 
 /*
@@ -374,18 +385,15 @@ article section.docstring a.source-link {
  * tip:     #1abc9c #dbfaf4 (green)
 */
 .admonition {
-    border-radius: 3px;
-    background-color: #eeeeee;
 }
 
 .admonition-title {
-    border-radius: 3px 3px 0 0;
     background-color: #9b9b9b;
     padding: 0.15em 0.5em;
 }
 
 .admonition-text {
-    padding: 0.5em;
+    padding: 0.8em;
 }
 
 .admonition-text > :first-child {
@@ -407,7 +415,7 @@ article section.docstring a.source-link {
 }
 
 .admonition.warning {
-    background-color: #ffedcc;
+    background-color: #fdf5ed;
 }
 
 .admonition.note > .admonition-title {
@@ -415,7 +423,7 @@ article section.docstring a.source-link {
 }
 
 .admonition.note {
-    background-color: #e7f2fa;
+    background-color: #eef6fb;
 }
 
 .admonition.tip > .admonition-title {
@@ -455,7 +463,7 @@ article section.docstring a.source-link {
 @media only screen and (max-width: 768px) {
     nav.toc {
         position: fixed;
-        overflow-y: scroll;
+        overflow-y: auto;
         width: 16em;
         left: -16em;
         -webkit-overflow-scrolling: touch;
