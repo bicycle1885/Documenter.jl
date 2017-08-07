@@ -149,7 +149,7 @@ nav.toc {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 18em;
+    width: 16em;
     overflow-y: auto;
     padding: 1em 0;
     background-color: #f6f6f6;
@@ -164,7 +164,7 @@ nav.toc .logo {
     margin: 0 auto;
     display: block;
     max-height: 6em;
-    max-width: 18em;
+    max-width: 14em;
 }
 
 nav.toc h1 {
@@ -231,8 +231,7 @@ nav.toc ul .toctext {
 }
 
 nav.toc ul a:hover {
-    color: #fcfcfc;
-    background-color: #4e4a4a;
+    background-color: white;
 }
 
 nav.toc ul.internal a {
@@ -277,14 +276,12 @@ nav.toc ul ul ul .toctext {
 }
 
 nav.toc li.current > .toctext {
-    color: #404040;
-    font-weight: bold;
     background-color: white;
     text-decoration: underline;
 }
 
 article {
-    margin-left: 17em;
+    margin-left: 14.5em;
     min-width: 20em;
     max-width: 60em;
     padding: 2em;
